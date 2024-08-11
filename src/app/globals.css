@@ -14,12 +14,6 @@ body {
     margin: auto;
 }
 
-@media (min-width: 768px) {
-    body {
-        margin: 50px;
-    }
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

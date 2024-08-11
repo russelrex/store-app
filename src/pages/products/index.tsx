@@ -32,7 +32,7 @@ const Products = () => {
 
     return (
         <>
-        <Box>
+        <Box padding={2}>
             <Grid container spacing={2}>
                 {status === 'loading' && <Typography variant="h6">Loading...</Typography>}
                 {products.map((product: Product) => (
