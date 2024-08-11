@@ -1,27 +1,25 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { Grid, Typography } from '@mui/material';
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    axios.get('https://fakestoreapi.in/api/products')
-      .then(response => {
-        console.log('===', response)
-        setData(response.data);
-        setLoading(false);
-      })
-      .catch(error => {
-        setError(error.message);
-        setLoading(false);
-      });
-  }, []);
-
     return (
         <>
-            Hello
+        <Grid container marginBottom={4} justifyContent={'center'} textAlign={'center'}>
+            <Grid item md={3}>
+                <Typography variant="h5" gutterBottom>
+                    Products
+                </Typography>
+            </Grid>
+            <Grid item md={6}>
+                <Typography variant="h5" gutterBottom>
+                    Products
+                </Typography>
+            </Grid>
+            <Grid item md={3}>
+                <Typography variant="h5" gutterBottom>
+                    Products
+                </Typography>
+            </Grid>
+        </Grid>
         </>
     )
 }
