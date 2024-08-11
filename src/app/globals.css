@@ -10,7 +10,14 @@
 
 body {
     color: rgb(var(--foreground-rgb));
-    margin: 50px;
+    background-color: #ffb0b0;
+    margin: auto;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin: 50px;
+    }
 }
 
 @layer utilities {
