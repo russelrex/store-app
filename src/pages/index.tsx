@@ -8,7 +8,7 @@ const Home = () => {
     };
     return (
         <>
-            <Search  onRefresh={handleRefresh}/>
+            <Search onRefresh={handleRefresh}/>
             <Grid container spacing={2}>
                 <Grid item md={3}>
                     Filter Component

@@ -6,6 +6,7 @@ import { AppDispatch, RootState } from '../store';
 import { useEffect } from 'react';
 import { fetchProductById } from '../store/products-slice';
 import { Product } from './interface/products/Product';
+import Review from './review';
 
 const ProductPage = () => {
     const router = useRouter();
@@ -46,17 +47,17 @@ const ProductPage = () => {
                                     flexDirection: 'column',
                                 }}>
                                     <Grid container>
-                                        <Grid item md={3}>
+                                        <Grid item md={3} xs={12}>
                                             <CardMedia
                                                 sx={{ 
-                                                    height: 250,
+                                                    height: 140,
                                                     backgroundSize: 'contain'
                                                 }}
                                                 image={product.image}
                                                 title="green iguana"
                                             />
                                         </Grid>
-                                        <Grid item md={9}>
+                                        <Grid item md={9} xs={12}>
                                             <CardContent>
                                             <Typography variant="h4" fontWeight="bold" mb={1}>
                                                 {product.title}
@@ -100,6 +101,9 @@ const ProductPage = () => {
                                                 {product.description}
                                             </Typography>
                                             </CardContent>
+                                        </Grid>
+                                        <Grid item md={12} m={4}>
+                                            <Review />
                                         </Grid>
                                     </Grid>
                                     </Card>

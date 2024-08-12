@@ -1,11 +1,13 @@
 import { Search as SearchIcon } from "@mui/icons-material";
-import { Card, CardContent, Grid, IconButton, InputAdornment, List, ListItem, ListItemText, OutlinedInput, Typography } from "@mui/material";
+import { Box, Card, CardContent, Grid, IconButton, InputAdornment, List, ListItem, ListItemText, OutlinedInput, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { AppDispatch, RootState } from '../../store';
 import { useDispatch, useSelector } from "react-redux";
 import { Product } from "../interface/products/Product";
 import { fetchProducts } from "../../store/products-slice";
 import { useRouter } from "next/router";
+import shopImage from '../../../public/shop.png';
+import Image from 'next/image'
 
 interface SearchProps {
     onRefresh: () => void; 
@@ -42,6 +44,10 @@ const Search: React.FC<SearchProps> = ({ onRefresh }) => {
         setSearchTerm('');
         onRefresh();
       }
+    
+      const goToHome = () => {
+        router.push(`/`);
+      }
 
     return (
         <>
@@ -56,7 +62,17 @@ const Search: React.FC<SearchProps> = ({ onRefresh }) => {
                     zIndex: 1000
                 }}
             >
-                <Grid item xs={12} md={12} display={'flex'} justifyContent={'center'}>
+                <Grid item md={2} xs={3} paddingRight={2} display={'flex'} justifyContent={'right'}>
+                    <div className="cursor-pointer">
+                        <Image
+                            src={shopImage}
+                            alt="Shop"
+                            width={50}
+                            onClick={() => goToHome()}
+                            />
+                    </div>
+                </Grid>
+                <Grid item md={10} xs={9} display={'flex'} justifyContent={'center'}>
                 <OutlinedInput
                     value={searchTerm}
                     onChange={handleSearchChange}
