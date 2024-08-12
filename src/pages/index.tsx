@@ -3,9 +3,12 @@ import Products from './products';
 import Search from './search';
 
 const Home = () => {
+    const handleRefresh = () => {
+        console.log('Refresh triggered');
+    };
     return (
         <>
-            <Search />
+            <Search  onRefresh={handleRefresh}/>
             <Grid container spacing={2}>
                 <Grid item md={3}>
                     Filter Component

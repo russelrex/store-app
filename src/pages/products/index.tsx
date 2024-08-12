@@ -4,11 +4,13 @@ import { fetchProducts } from '../../store/products-slice';
 import { AppDispatch, RootState } from '../../store';
 import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, Link, Typography } from '@mui/material';
 import { Product } from '../interface/products/Product';
+import { useRouter } from 'next/router';
 
 const MAX_LENGTH = 50;
 
 const Products = () => {
     const dispatch = useDispatch<AppDispatch>();
+    const router = useRouter();
     const products = useSelector((state: RootState): Product[] => state.products.items);
     const status = useSelector((state: RootState) => state.products.status);
     const [expandedProductIds, setExpandedProductIds] = useState<Set<number>>(new Set());
@@ -30,6 +32,10 @@ const Products = () => {
     }
   }, [status, dispatch]);
 
+  const goToProduct = (id: number) => {
+    router.push(`/${id}`);
+  }
+
     return (
         <>
         <Box padding={2}>
@@ -43,7 +49,10 @@ const Products = () => {
                             height: expandedProductIds.has(product.id) ? 'auto' : { xs: 415, md: 380 },
                             display: 'grid',
                             flexDirection: 'column',
-                        }}>
+                            cursor: 'pointer'
+                        }}
+                        onClick={() => goToProduct(product.id)}
+                        >
                         <CardHeader title={ product.category.toUpperCase() }>
                         </CardHeader>
                             <CardMedia

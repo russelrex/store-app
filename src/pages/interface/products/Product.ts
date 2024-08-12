@@ -8,4 +8,5 @@ export interface Product {
     discount: number;
     image: string;
     model: string;
+    color: string;
   }
