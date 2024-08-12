@@ -72,7 +72,10 @@ const Products = () => {
                                 <Link
                                     component="button"
                                     variant="body2"
-                                    onClick={() => toggleExpanded(product.id)}
+                                    onClick={(event) => {
+                                        event.stopPropagation();
+                                        toggleExpanded(product.id);
+                                    }}
                                     sx={{ ml: 1 }}
                                 >
                                     { expandedProductIds.has(product.id) ? 'See less' : 'See more' }
