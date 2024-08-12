@@ -3,7 +3,7 @@ import { Box, Card, CardContent, Grid, IconButton, InputAdornment, List, ListIte
 import { useEffect, useState } from "react";
 import { AppDispatch, RootState } from '../../store';
 import { useDispatch, useSelector } from "react-redux";
-import { Product } from "../interface/products/Product";
+import { Product } from "../../interface/products/Product";
 import { fetchProducts } from "../../store/products-slice";
 import { useRouter } from "next/router";
 import shopImage from '../../../public/shop.png';

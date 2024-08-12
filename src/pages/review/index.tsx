@@ -9,14 +9,17 @@ const Review = () => {
             </Typography>
             <Grid container spacing={3}>
                 <Grid item md={3} xs={12}>
-                    <Card>
+                    <Card sx={{
+                        backgroundColor: 'floralwhite',
+                        height: 350
+                     }}>
                         <CardContent>
                             <Face fontSize='large' />
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                                 Rating: ★★★☆☆ (3/5)
                             </Typography>
                             <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                Review
+                                Review:
                             </Typography>
                             <Typography variant="body2" fontStyle="italic">
                                 &quot;This laptop has exceeded my expectations in terms of performance.
@@ -29,7 +32,10 @@ const Review = () => {
                     </Card>
                 </Grid>
                 <Grid item md={3} xs={12}>
-                    <Card>
+                    <Card sx={{
+                        backgroundColor: 'floralwhite',
+                        height: 350
+                     }}>
                         <CardContent>
                             <Face2 fontSize='large' />
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -49,7 +55,10 @@ const Review = () => {
                     </Card>
                 </Grid>
                 <Grid item md={3} xs={12}>
-                    <Card>
+                    <Card sx={{
+                        backgroundColor: 'floralwhite',
+                        height: 350
+                     }}>
                         <CardContent>
                             <Face3 fontSize='large' />
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -69,7 +78,10 @@ const Review = () => {
                     </Card>
                 </Grid>
                 <Grid item md={3} xs={12}>
-                    <Card>
+                    <Card sx={{
+                        backgroundColor: 'floralwhite',
+                        height: 350
+                     }}>
                         <CardContent>
                             <Face4 fontSize='large' />
                             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>

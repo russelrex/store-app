@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../../store/products-slice';
 import { AppDispatch, RootState } from '../../store';
 import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, Link, Typography } from '@mui/material';
-import { Product } from '../interface/products/Product';
+import { Product } from '../../interface/products/Product';
 import { useRouter } from 'next/router';
 
 const MAX_LENGTH = 50;

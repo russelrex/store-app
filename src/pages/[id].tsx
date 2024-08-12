@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store';
 import { useEffect } from 'react';
 import { fetchProductById } from '../store/products-slice';
-import { Product } from './interface/products/Product';
+import { Product } from '../interface/products/Product';
 import Review from './review';
+import Filter from './filter';
 
 const ProductPage = () => {
     const router = useRouter();
@@ -17,7 +18,6 @@ const ProductPage = () => {
     const status = useSelector((state: RootState) => state.products.selectedProductStatus);
 
   useEffect(() => {
-    console.log('=r', id)
     if (status === 'idle' && id) {
         dispatch(fetchProductById(id as string));
     }
@@ -31,8 +31,8 @@ const ProductPage = () => {
         <>
         <Search onRefresh={handleRefresh} />
         <Grid container spacing={2}>
-            <Grid item md={3}>
-                Filter Component
+            <Grid item md={3} xs={12}>
+                <Filter />
             </Grid>
             <Grid item md={9}>
                 <Box padding={2}>
