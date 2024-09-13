@@ -11,7 +11,7 @@ const Review = () => {
                 <Grid item md={3} xs={12}>
                     <Card sx={{
                         backgroundColor: 'floralwhite',
-                        height: 350
+                        height: '100%'
                      }}>
                         <CardContent>
                             <Face fontSize='large' />
@@ -34,7 +34,7 @@ const Review = () => {
                 <Grid item md={3} xs={12}>
                     <Card sx={{
                         backgroundColor: 'floralwhite',
-                        height: 350
+                        height: '100%'
                      }}>
                         <CardContent>
                             <Face2 fontSize='large' />
@@ -57,7 +57,7 @@ const Review = () => {
                 <Grid item md={3} xs={12}>
                     <Card sx={{
                         backgroundColor: 'floralwhite',
-                        height: 350
+                        height: '100%'
                      }}>
                         <CardContent>
                             <Face3 fontSize='large' />
@@ -80,7 +80,7 @@ const Review = () => {
                 <Grid item md={3} xs={12}>
                     <Card sx={{
                         backgroundColor: 'floralwhite',
-                        height: 350
+                        height: '100%'
                      }}>
                         <CardContent>
                             <Face4 fontSize='large' />

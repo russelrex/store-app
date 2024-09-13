@@ -6,7 +6,7 @@ import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, Link,
 import { Product } from '../../interface/products/Product';
 import { useRouter } from 'next/router';
 
-const MAX_LENGTH = 50;
+const MAX_LENGTH = 80;
 
 const Products = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -64,8 +64,9 @@ const Products = () => {
                                 title="green iguana"
                             />
                             <CardContent>
-                                <Typography>
-                                { expandedProductIds.has(product.id)
+                                <Typography fontSize={'12px'}>
+                                    { truncatedDescription(product.description) }
+                                {/* { expandedProductIds.has(product.id)
                                     ? product.description
                                     : truncatedDescription(product.description)}
                                 { product.description.length > MAX_LENGTH && (
@@ -80,7 +81,7 @@ const Products = () => {
                                 >
                                     { expandedProductIds.has(product.id) ? 'See less' : 'See more' }
                                 </Link>
-                                )}
+                                )} */}
                                 </Typography>
                             </CardContent>
                             <CardActions sx={{ paddingRight: '25px', justifyContent: 'right' }}>

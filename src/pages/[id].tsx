@@ -31,11 +31,11 @@ const ProductPage = () => {
         <>
         <Search onRefresh={handleRefresh} />
         <Grid container spacing={2}>
-            <Grid item md={3} xs={12}>
+            {/* <Grid item md={3} xs={12}>
                 <Filter />
-            </Grid>
-            <Grid item md={9}>
-                <Box padding={2}>
+            </Grid> */}
+            <Grid item md={12} display={'flex'} justifyContent={'center'}>
+                <Box padding={2} width={'80%'}>
                     <Grid container spacing={2}>
                         {status === 'loading' && <Typography variant="h6">Loading...</Typography>}
                         {product ? (
@@ -49,8 +49,8 @@ const ProductPage = () => {
                                     <Grid container>
                                         <Grid item md={3} xs={12}>
                                             <CardMedia
-                                                sx={{ 
-                                                    height: 140,
+                                                sx={{
+                                                    height: 200,
                                                     backgroundSize: 'contain'
                                                 }}
                                                 image={product.image}
@@ -59,45 +59,45 @@ const ProductPage = () => {
                                         </Grid>
                                         <Grid item md={9} xs={12}>
                                             <CardContent>
-                                            <Typography variant="h4" fontWeight="bold" mb={1}>
+                                            <Typography variant="h5" fontWeight="bold" mb={1}>
                                                 {product.title}
                                             </Typography>
-                                            <Typography variant="h4" fontWeight="bold" mb={4}>
+                                            <Typography variant="h5" fontWeight="bold" mb={2}>
                                                 ${product.price.toFixed(2)}
                                             </Typography>
                                             
-                                            <Typography fontWeight="bold" mb={1}>
+                                            <Typography fontWeight="bold">
                                                 Brand
                                             </Typography>
-                                            <Typography mb={2}>
+                                            <Typography mb={1}>
                                                 {product.brand}
                                             </Typography>
                                             
-                                            <Typography fontWeight="bold" mb={1}>
+                                            <Typography fontWeight="bold">
                                                 Category
                                             </Typography>
-                                            <Typography mb={2}>
+                                            <Typography mb={1}>
                                                 {product.category}
                                             </Typography>
                                             
-                                            <Typography fontWeight="bold" mb={1}>
+                                            <Typography fontWeight="bold">
                                                 Model
                                             </Typography>
-                                            <Typography mb={2}>
+                                            <Typography mb={1}>
                                                 {product.model}
                                             </Typography>
                                             
-                                            <Typography fontWeight="bold" mb={1}>
+                                            <Typography fontWeight="bold">
                                                 Color
                                             </Typography>
-                                            <Typography mb={2}>
+                                            <Typography mb={1}>
                                                 {product.color}
                                             </Typography>
                                             
-                                            <Typography fontWeight="bold" mb={1}>
+                                            <Typography fontWeight="bold">
                                                 Description
                                             </Typography>
-                                            <Typography mb={2}>
+                                            <Typography mb={1}>
                                                 {product.description}
                                             </Typography>
                                             </CardContent>
